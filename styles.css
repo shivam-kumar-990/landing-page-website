@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* font family google fonts se import kraya ha */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* global properties ha jo ki ek sath change kr skte ha */
+
+:root{
+  --primary-text-color: #183b56;
+  --secondary-text-color: #577592;
+  --accent-color: #2294ed;
+  --accent-color-dark: #1d69a3;
+  --padding-inline-section: 20px;
+}
+
+body{
+  font-family: 'poppins','sans-serif';
+  color: var(--primary-text-color);
+}
+
+h1{
+  font-size: 3rem;
+}
+h2{
+  font-size: 2rem;
+}
+h3{
+  font-size: 1.5rem;
+}
+p{
+  font-family: 'Roboto',sans-serif;
+  font-size: 1.25rem;
+  color: var(--secondary-text-color);
+  line-height: 1.8rem;
+}
+
+a{
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul{
+  /* dot hta dege sare se */
+  list-style: none;
+}
+
+/* utility classes bna rhe ha */
+
+.small-bold-text{
+    font-size: 1rem;
+    font-weight: 700;
+}   
+
+    /* YE CONTAINER SBSE IMPORTANT HAI AS ISME WJAH SE SARE ELEMENTS EK LINE ME DIKHEGE IN WEBPAGE */
+.container{
+  max-width: 1180px;
+  margin-inline:auto;/* so that container center me aa jayega */
+  padding-inline:var(--padding-inline-section);
+}
+
+.hover-link{
+    color: var(--primary-text-color);
+
+}
+.hover-link:hover{
+  color: var(--accent-color);
+  transition: 0.2s ease-in-out;
+}
+
+.primary-button{
+  background-color: var(--accent-color);
+  border-radius: 6px;
+  font-weight: 700;
+  color: white !important; 
+  /* important isliye likha --qki anchor tag ko already color property de rkhi and i.e blackk */
+
+  padding: 12px 24px;
+  box-shadow: 0 0 2px var(--secondary-text-color);
+    /* x-dirxn,y-dirxn,kitna blur dena ha, shadow color */
+  transition: 0.2s ease-out;
+}
+
+.primary-button:hover{
+  background-color: var(--accent-color-dark);
+}
+
+.secondary-button{
+  border: 0.5px solid var(--secondary-text-color);
+  border-radius: 6px;
+  font-weight: 700; /* bold krne ke liye */
+  padding: 12px 24px;
+  transition: 0.2s ease-out;
+}
+/* transition state me property define krege jaisi ki hover */
+.secondary-button:hover{
+  border-color: var(--accent-color);
+  color: var(--accent-color) !important;
+
+}
+
+/* flex ki utlity bna dege jisi ki baar baar flex ni lgana hoga different section --u just use this flex utility */
+
+.flex{
+  display: flex;
+  align-items: center;
+}
+
+  /* top banner */
+
+.banner-text{
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+}
+
+.top-banner{
+  background-image: url(./assets/pexels-catiamatos-1072179.jpg);
+  background-color: #67cbec;
+  background-size: 300px; 
+  /* isse background image repeat hogi */
+}
+
+/* main nav ko flex bna dege jisi ki iske andar jo do element ha wo flex go jane chahiye. */
+
+/* display :flex
+align-item: center --tab hm krte ha justify content : space-between so that img and ul item ke bich gap rhe */
+
+ /* nav ka css */
+.main-nav{
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.company-logo img{
+    width: 200px;
+}
+
+.nav-links{
+    /* by using flex basis hm iski nav links ki width define kr skte ha li navlink ki width total itni hogi */
+    flex-basis: 730px;
+}
+
+.nav-links ul{
+  justify-content: end; 
+  /* so that sare navlinks right me hi align rhe */
+
+  gap: 40px;
+}
+
+     /* HEADER-SECTION */
+header{
+  padding: 50px var(--padding-inline-section);
+
+}
+
+.header-section{
+  justify-content: center;
+  gap: 50px;
+}
+
+.header-left{
+    max-width: 40vw;
+}
+.header-left h1{
+  margin-top: 20px;
+}
+
+.header-right img{
+  width: 600px;
+}
+
+.get-started-btn{
+  margin: 20px;
+}
+
+   /* COMPANIES HEADER */
+.companies-header{
+  text-align: center;
+  margin-block: 30px;
+  /* margin top and margin bottom ke jgah pe aap de skte ha margin-block */
+  color: var(--primary-text-color);
+}
+.logos{
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* flex-wrapko wrap krne se agar window choti hui toh content ek ke niche ek aa jayega */
+}
+.logo{
+  height: 46px;
+}
+
+   /* FEATURES-SECTION */
+
+.features-section{
+    padding: 80px var(--padding-inline-section) 0;
+
+    background-image: url(./assets/pexels-cottonbro-5124876.jpg);
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.features-header{
+  text-align: center;
+}
+
+.features-header h2{
+  margin-bottom: 20px;
+}
+.features-area{
+  flex-wrap: wrap;
+      /* ye prop. hm parent div ko dete ha jise ki child divs ko width aur gap de ske 
+      
+      i.e wrap ho jayege sare items in next row if space na ho 
+      */
+      justify-content: space-between; /*  isse space equally divide ho jayega */
+      gap: 40px;
+      margin-top: 20px;
+}
+
+.features-card{
+  
+  flex-direction: column;
+  gap: 20px;
+  max-width: 30%;
+  text-align: center;
+}
+.features-card img{
+  width: 60px;
+}
+
+   /* BIG FEATURE SECTION */
+.big-feature-section{
+  padding: 30px var(--padding-inline-section) 0;
+}
+
+/* ab left and right side me gap lane ke liye  */
+.big-feature-container{
+  gap: 30px;
+
+  /* isse image and right side wale content me space aa jayega */
+}
+
+.feature-img img{
+  width:100%; /*  apne parent se 100% rhega */
+}
+.feature-desc{
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+ /* EXAMPLES-SECTION */
+ .examples-header{
+  flex-direction: column;
+  gap: 20px;
+ }
+
+ .examples-area{
+  justify-content: space-between;
+  margin-block: 30px;
+  
+}
+
+ .examples-card{
+  width: 23%;
+  position: relative;
+  min-height: 300px;
+  background: #183b56;
+  background: linear-gradient(rgb(0,0,0,0.1), rgb(0,0,0,0.8)), url(./assets/pexels-boris-pavlikovsky-5498388.jpg);
+  background-size: contain;
+  transition:0.5sec ease-out;
+  
+
+  /* background-size: contain; isko krne se background image pura card ka size occupy kr lega else ni toh phir kisi ek portion zoom dikhega */
+ }
+ .examples-card:hover{
+  box-shadow:0 0 40px; 
+  /* 40px blur  mtlb itne intensity se background shadow ayegi*/
+}
+ .card-text{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  color: white;
+ }
+
+ /* nth child property will be used to change thr background image of card */
+ .examples-card:nth-child(3){
+  background: linear-gradient(rgb(0,0,0,0.1), rgb(0,0,0,0.8)), url(./assets/pexels-padrinan-2120614.jpg);
+  background-size: contain;
+ }
+
+ .examples-card:nth-child(2){
+  background: linear-gradient(rgb(0,0,0,0.1), rgb(0,0,0,0.8)), url(./assets/pexels-rann-vijay-677553-7742559.jpg);
+  background-size: contain;
+ }
+
+        /* CTA SECTION */
+.cta-section-container{
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  
+}
+.cta-section{
+  padding: 120px var(--padding-inline-section) 80px;
+  background-color: #0d1317;
+}
+
+.cta-section-container p{
+  color: white;
+  margin-top: 20px;
+}
+
+      /* FOOTER */
+footer{
+  /* padding-block: jisi ki top aur bottom ki padding de ske
+  */ 
+  padding-block: 80px;
+  background-color: rgba(168, 128, 182, 0.667);
+}
+.link-column{
+  flex-direction: column;
+  align-items: flex-start;
+/* 
+  jise ki center me align na hoke left to right align hoge link-columns */
+  gap: 20px;
+}
+
+/* //columns ke bich me distance ke liye we are using footer-container */
+
+.footer-container{
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+        /* SUB-FOOTER */
+.sub-footer{
+  background-color: #b9cde4;
+  padding: var(--padding-inline-section);
+}
+.subfooter-container{
+  justify-content: center;
+  gap: 30px;
+}
